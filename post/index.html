@@ -94,7 +94,7 @@
 	   
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/abstract/">Abstract</a></h2>
+        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/abstract/">1 - Abstract</a></h2>
     </header>
     <section class="post-excerpt">
       <p>
@@ -119,7 +119,7 @@
 	   
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/dataset/">Dataset</a></h2>
+        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/dataset/">2 - Dataset</a></h2>
     </header>
     <section class="post-excerpt">
       <p>
@@ -147,7 +147,7 @@
 	   
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/network/">Network</a></h2>
+        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/network/">3 - Network</a></h2>
     </header>
     <section class="post-excerpt">
       <p>
@@ -165,7 +165,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="network-analysis">Network Analysis</h4>
+<h4 id="31---network-analysis">3.1 - Network Analysis</h4>
 <p>Studying the in-degree we found that the 5 most connected characters are Alphinaud Leveilleur(56), Gaius van Baelsar(37), Y&rsquo;shtola Rhul(35), Thancred Waters(34), Zenos yae Galvus(33).</p>
 <p>Analyzing the out-degree we can see that the 5 most connected characters are Alphinaud Leveilleur(33), Lyse Hext(30), Y&rsquo;shtola Rhul(26), Elidibus(25), Thancred Waters(22).</p>
 <p>The plots of the degree distributions are reported below.</p>
@@ -206,7 +206,7 @@
 	   
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/analysis/">Text Analysis</a></h2>
+        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/analysis/">4 - Text Analysis</a></h2>
     </header>
     <section class="post-excerpt">
       <p>
@@ -219,7 +219,7 @@ Words related to the structure of the wiki and not to a specific character of th
 <blockquote>
 <p>Garlean Empire, High Houses of Ishgard, Doma</p>
 </blockquote>
-<h4 id="word-clouds">Word Clouds</h4>
+<h4 id="41---word-clouds">4.1 - Word Clouds</h4>
 <table>
 <thead>
 <tr>
@@ -237,6 +237,472 @@ Words related to the structure of the wiki and not to a specific character of th
 </tbody>
 </table>
 <p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/wordcloud2.png" alt="Wordcloud"></p>
+
+          </section>
+      </p>
+      
+    </section>
+    <footer class="post-meta">
+        
+        
+        
+            
+        
+        
+    </footer>
+</article>
+
+	
+	   
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/community/">5 - Finding Communities</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+          <section class="post-content">
+            <p>As we are interested in analyzing the relations amongst the characters. In particular, we want to try to detect communities and study their characteristics. In order to perform this analysis, we are going to apply the Louvain Algorithm for community detection to the undirected network created previously.</p>
+<p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/community.png" alt="Community Distribution"></p>
+<p>The algorithm detects 5 small communities that have less than 10 characters, and 9 bigger communities that have between 20 and 50 characters.</p>
+<p>In the following plot the network is represented with a different color for every community.</p>
+<p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/community2.png" alt="Community Distribution 2"></p>
+<p>The characters belonging to the 5 most populous communities have been reported below.</p>
+<table>
+<thead>
+<tr>
+<th>Community 1</th>
+<th style="text-align:center">Community 2</th>
+<th>Community 3</th>
+<th style="text-align:center">Community 4</th>
+<th>Community 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alphinaud Leveilleur</td>
+<td style="text-align:center">Y&rsquo;shtola Rhul</td>
+<td>Estinien Wyrmblood</td>
+<td style="text-align:center">G&rsquo;raha Tia</td>
+<td>Noah van Gabranth</td>
+</tr>
+<tr>
+<td>Alisaie Leveilleur</td>
+<td style="text-align:center">Thancred Waters</td>
+<td>Regula van Hydrus</td>
+<td style="text-align:center">Tataru Taru</td>
+<td>Gerolt Blackthorn</td>
+</tr>
+<tr>
+<td>Y&rsquo;shtola Rhul</td>
+<td style="text-align:center">Urianger Augurelt</td>
+<td>Buscarron Stacks</td>
+<td style="text-align:center">Cid Garlond</td>
+<td>Lina Mewrilah</td>
+</tr>
+<tr>
+<td>G&rsquo;raha Tia</td>
+<td style="text-align:center">Krile Mayer Baldesion</td>
+<td>Foulques</td>
+<td style="text-align:center">Biggs and Wedge</td>
+<td>Adalberta Sterne</td>
+</tr>
+<tr>
+<td>Estinien Wyrmblood</td>
+<td style="text-align:center">Minfilia Warde</td>
+<td>Ywain Deepwell</td>
+<td style="text-align:center">Gaius van Baelsar</td>
+<td>Aldis</td>
+</tr>
+<tr>
+<td>Krile Mayer Baldesion</td>
+<td style="text-align:center">Louisoix Leveilleur</td>
+<td>Zhai&rsquo;a Nelhah</td>
+<td style="text-align:center">Nael van Darnus</td>
+<td>Deep Canyon</td>
+</tr>
+<tr>
+<td>Tataru Taru</td>
+<td style="text-align:center">F&rsquo;lhaminn Qesh</td>
+<td>Lalai Lai</td>
+<td style="text-align:center">Livia sas Junius</td>
+<td>Leavold</td>
+</tr>
+<tr>
+<td>Unukalhai</td>
+<td style="text-align:center">Unukalhai</td>
+<td>Waldeve</td>
+<td style="text-align:center">Midas nan Garlond</td>
+<td>Mylla Swordsong</td>
+</tr>
+<tr>
+<td>Biggs and Wedge</td>
+<td style="text-align:center">Emet-Selch</td>
+<td>Ysayle Dangoulain</td>
+<td style="text-align:center">Nero tol Scaeva</td>
+<td>Wide Gulley</td>
+</tr>
+<tr>
+<td>Igeyorhm</td>
+<td style="text-align:center">Elidibus</td>
+<td>Thordan VII</td>
+<td style="text-align:center">Rhitahtyn sas Arvina</td>
+<td>Brithael Spade</td>
+</tr>
+<tr>
+<td>Fordola rem Lupis</td>
+<td style="text-align:center">Lahabrea</td>
+<td>Alberic Bale</td>
+<td style="text-align:center">Vitus quo Messalla</td>
+<td>Khloe Aliapoh</td>
+</tr>
+<tr>
+<td>Regula van Hydrus</td>
+<td style="text-align:center">Igeyorhm</td>
+<td>Haldrath</td>
+<td style="text-align:center">Eline Roaille</td>
+<td>T&rsquo;kebbe Morh</td>
+</tr>
+<tr>
+<td>Buscarron Stacks</td>
+<td style="text-align:center">Nabriales</td>
+<td>Heustienne de Vimaroix</td>
+<td style="text-align:center">Bahamut</td>
+<td>Zhloe Aliapoh</td>
+</tr>
+<tr>
+<td>Foulques</td>
+<td style="text-align:center">Loghrif</td>
+<td>Lucia Junius</td>
+<td style="text-align:center">Tiamat</td>
+<td>Ejika Tsunjika</td>
+</tr>
+<tr>
+<td>Ywain Deepwell</td>
+<td style="text-align:center">Mitron</td>
+<td>Rasequin</td>
+<td style="text-align:center">Mide Hotgo</td>
+<td>Mikoto Jinba</td>
+</tr>
+<tr>
+<td>Pipin Tarupin</td>
+<td style="text-align:center">Niellefresne Thaudour</td>
+<td>Thordan I</td>
+<td style="text-align:center">Matoya</td>
+<td>Ramza Beoulve</td>
+</tr>
+<tr>
+<td>Ysayle Dangoulain</td>
+<td style="text-align:center">Severian Lyctor</td>
+<td>Hraesvelgr</td>
+<td style="text-align:center">Seiryu</td>
+<td>Alma Beoulve</td>
+</tr>
+<tr>
+<td>Thordan VII</td>
+<td style="text-align:center">Midnight Dew</td>
+<td>Nidhogg</td>
+<td style="text-align:center">Genbu</td>
+<td>Fran Eruyt</td>
+</tr>
+<tr>
+<td>Alberic Bale</td>
+<td style="text-align:center">Fourchenault Leveilleur</td>
+<td>Ratatoskr</td>
+<td style="text-align:center">Sophie</td>
+<td>Ashelia B&rsquo;nargin Dalmasca</td>
+</tr>
+<tr>
+<td>Haldrath</td>
+<td style="text-align:center">Ardbert</td>
+<td>Faunehm</td>
+<td style="text-align:center">Soroban</td>
+<td>Rasler B&rsquo;nargin Dalmasca</td>
+</tr>
+<tr>
+<td>Heustienne de Vimaroix</td>
+<td style="text-align:center">Branden</td>
+<td>Orn Khai</td>
+<td style="text-align:center">Feo Ul</td>
+<td>Ba&rsquo;Gamnan</td>
+</tr>
+<tr>
+<td>Lucia Junius</td>
+<td style="text-align:center">Cylva</td>
+<td>Vedrfolnir</td>
+<td style="text-align:center">An Lad</td>
+<td>Eureka(primal)</td>
+</tr>
+<tr>
+<td>Rasequin</td>
+<td style="text-align:center">Lamitt</td>
+<td>Vidofnir</td>
+<td style="text-align:center">Ezel II</td>
+<td>Mutamix Bubblypots</td>
+</tr>
+<tr>
+<td>Thordan I</td>
+<td style="text-align:center">Nyelbert</td>
+<td>The Steps of Faith</td>
+<td style="text-align:center">Titania</td>
+<td>Alma bas Lexentale</td>
+</tr>
+<tr>
+<td>Hraesvelgr</td>
+<td style="text-align:center">Renda-Rae</td>
+<td>Midgardsormr</td>
+<td style="text-align:center">Tyr Beq</td>
+<td>Jenomis cen Lexentale</td>
+</tr>
+<tr>
+<td>Nidhogg</td>
+<td style="text-align:center">Ryne</td>
+<td>Shiva</td>
+<td style="text-align:center">Doga</td>
+<td>Ramza bas Lexentale</td>
+</tr>
+<tr>
+<td>Ratatoskr</td>
+<td style="text-align:center">Beq Lugg</td>
+<td>Ravana</td>
+<td style="text-align:center">Unei</td>
+<td>Drake Rhodes</td>
+</tr>
+<tr>
+<td>Tiamat</td>
+<td style="text-align:center">Lue-Reeq</td>
+<td>Knights of the Round</td>
+<td style="text-align:center">Ultima Weapon</td>
+<td>Jalzahn Daemir</td>
+</tr>
+<tr>
+<td>Faunehm</td>
+<td style="text-align:center">Gaia</td>
+<td>Sephirot</td>
+<td style="text-align:center">Alexander</td>
+<td>Rowena</td>
+</tr>
+<tr>
+<td>Orn Khai</td>
+<td style="text-align:center">Giott</td>
+<td>Sophia</td>
+<td style="text-align:center">Quickthinx Allthoughts</td>
+<td>Bajsaljen Ulgasch</td>
+</tr>
+<tr>
+<td>Vedrfolnir</td>
+<td style="text-align:center">Granson</td>
+<td>Zurvan</td>
+<td style="text-align:center">Cloud of Darkness</td>
+<td>F&rsquo;hobhas</td>
+</tr>
+<tr>
+<td>The Steps of Faith</td>
+<td style="text-align:center">Ran&rsquo;jit</td>
+<td>Chieftain Moglin</td>
+<td style="text-align:center">Radovan</td>
+<td>Jihli Aliapoh</td>
+</tr>
+<tr>
+<td>Mide Hotgo</td>
+<td style="text-align:center">Lanbyrd</td>
+<td>Kazagg Chah</td>
+<td style="text-align:center">Omega</td>
+<td></td>
+</tr>
+<tr>
+<td>Midnight Dew</td>
+<td style="text-align:center">Olvara</td>
+<td>Lightning</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Fourchenault Leveilleur</td>
+<td style="text-align:center">Seto</td>
+<td>Noctis Lucis Caelum</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Matoya</td>
+<td style="text-align:center">Sul Oul</td>
+<td>Shantotto</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Seiryu</td>
+<td style="text-align:center">The Twelve</td>
+<td>Garuda</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Genbu</td>
+<td style="text-align:center">Hydaelyn</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Soroban</td>
+<td style="text-align:center">Zodiark</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Beq Lugg</td>
+<td style="text-align:center">Final Coil of Bahamut</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Lyna</td>
+<td style="text-align:center">Bismarck</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Tesleen</td>
+<td style="text-align:center">Hythlodaeus</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Halric</td>
+<td style="text-align:center">Sauldia</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Chai-Nuzz</td>
+<td style="text-align:center">Tadric</td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Dulia-Chai</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Tristol</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Feo Ul</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Shiva</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Bismarck</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Ravana</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Sephirot</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Sophia</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Zurvan</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Alexander</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Susano</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Lakshmi</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Brayflox Alltalks</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Chieftain Moglin</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Ga Bu</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>Quickthinx Allthoughts</td>
+<td style="text-align:center"></td>
+<td></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Characters belonging to the same community, are expected to be more connected to each other in the game compared to character belonging to different communities. To prove this point more accurately, it would be necessary to analyze the game more in deep and gather information regarding the actual story behind each character and their true relations with each other in the game. We will not continue this analysis. Instead, we are going to analyze which words are the most representative of each community and finally, we will study the average sentiment of these communities, to understand if there is a common positive or negative feeling among the character of a group.</p>
+<h4 id="51---common-words-in-the-communities">5.1 - Common words in the communities</h4>
+<p>We identified the most descriptive words related to each community. The objective is to understand if different communities have different related words. We used two different methods: the TF and and the TF-IDF. The first one will take into account how much a specific word appear in the text, while the other will also consider how often that word appear through the whole database, adding value to those words that are more characteristic of a specific community, therefore more relevant.</p>
 
           </section>
       </p>

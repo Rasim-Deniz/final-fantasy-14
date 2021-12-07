@@ -9,7 +9,7 @@
     <copyright>All rights reserved - 2021</copyright>
     <lastBuildDate>Fri, 01 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://Rasim-Deniz.github.io/final-fantasy-14/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Abstract</title>
+      <title>1 - Abstract</title>
       <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/abstract/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
       
@@ -18,7 +18,7 @@
     </item>
     
     <item>
-      <title>Dataset</title>
+      <title>2 - Dataset</title>
       <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/dataset/</link>
       <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
       
@@ -30,23 +30,33 @@ From each character wikipage we obtained the information related to age, race, g
     </item>
     
     <item>
-      <title>Network</title>
+      <title>3 - Network</title>
       <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/network/</link>
       <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/network/</guid>
       <description>The network created contains 385 nodes, each one related to character and 1472 edges. Firstly, we discarded the isolated nodes resulting in 335 remaining nodes. Afterwards, we extracted the Giant Component obtaining the final network which has 320 nodes and 1449 links.
-        FFXIV (Undirected) Network    Network Analysis Studying the in-degree we found that the 5 most connected characters are Alphinaud Leveilleur(56), Gaius van Baelsar(37), Y&amp;rsquo;shtola Rhul(35), Thancred Waters(34), Zenos yae Galvus(33).</description>
+        FFXIV (Undirected) Network    3.1 - Network Analysis Studying the in-degree we found that the 5 most connected characters are Alphinaud Leveilleur(56), Gaius van Baelsar(37), Y&amp;rsquo;shtola Rhul(35), Thancred Waters(34), Zenos yae Galvus(33).</description>
     </item>
     
     <item>
-      <title>Text Analysis</title>
+      <title>4 - Text Analysis</title>
       <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/analysis/</guid>
       <description>In order to perform the text analysis, we decided to prepare the data by applying tokenization and lemmatization to the character descriptions obtained from the wikipages. Words related to the structure of the wiki and not to a specific character of the story, where also removed from the text.
 The frequency distribution of the 75 most common tokens is reported below. We tried to find the most important words related to each affiliation using both TF and TF-IDF.</description>
+    </item>
+    
+    <item>
+      <title>5 - Finding Communities</title>
+      <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/community/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/community/</guid>
+      <description>As we are interested in analyzing the relations amongst the characters. In particular, we want to try to detect communities and study their characteristics. In order to perform this analysis, we are going to apply the Louvain Algorithm for community detection to the undirected network created previously.
+The algorithm detects 5 small communities that have less than 10 characters, and 9 bigger communities that have between 20 and 50 characters.</description>
     </item>
     
   </channel>

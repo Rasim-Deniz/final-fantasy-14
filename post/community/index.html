@@ -5,16 +5,20 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  	<meta property="og:title" content=" Final Fantasy XIV Network" />
+  	<meta property="og:title" content=" 5 - Finding Communities &middot;  Final Fantasy XIV Network" />
   	<meta property="og:site_name" content="Final Fantasy XIV Network" />
-  	<meta property="og:url" content="https://Rasim-Deniz.github.io/final-fantasy-14/" />
+  	<meta property="og:url" content="https://Rasim-Deniz.github.io/final-fantasy-14/post/community/" />
     
     
-    <meta property="og:type" content="website" />
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="0001-01-01T00:00:00Z" />
+
+    
     
 
   <title>
-     Final Fantasy XIV Network
+     5 - Finding Communities &middot;  Final Fantasy XIV Network
   </title>
 
     <meta name="description" content="A Social Graphs and Interactions Project" />
@@ -31,13 +35,13 @@
 
     
       
+          <link href="https://Rasim-Deniz.github.io/final-fantasy-14/index.xml" rel="alternate" type="application/rss+xml" title="Final Fantasy XIV Network" />
       
-        <link href="https://Rasim-Deniz.github.io/final-fantasy-14/index.xml" rel="alternate" type="application/rss+xml" title="Final Fantasy XIV Network" />
       
     
     <meta name="generator" content="Hugo 0.89.4" />
 
-    <link rel="canonical" href="https://Rasim-Deniz.github.io/final-fantasy-14/" />
+    <link rel="canonical" href="https://Rasim-Deniz.github.io/final-fantasy-14/post/community/" />
 
      
 </head>
@@ -47,218 +51,39 @@
 
 
  <div class="site-wrapper">
+ 
 
-
-
-<header class="main-header " style="background-image: url(https://Rasim-Deniz.github.io/final-fantasy-14/images/endwalker.jpg)">
-
-
+<header
+  class="main-header"
+  style="background-image: url(https://Rasim-Deniz.github.io/final-fantasy-14/images/endwalker.jpg)"
+>
+  <nav class="main-nav overlay clearfix">
     
-
-    <nav class="main-nav overlay clearfix">
-        
-        
-    </nav>
-<div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">
-              <a class="btn-bootstrap-2 title-scroll" href="#content">Final Fantasy XIV Network</a>
-          </h1>
-          <h2 class="page-description">A Social Graphs and Interactions Project</h2>
-        </div>
-</div>
-    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+    
+  </nav>
+  <div class="vertical">
+    <div class="main-header-content inner">
+      <h1 class="page-title">
+        <a class="btn-bootstrap-2" href="#content">Final Fantasy XIV Network</a>
+      </h1>
+      <h2 class="page-description">A Social Graphs and Interactions Project</h2>
+    </div>
+  </div>
+  <a class="scroll-down icon-arrow-left" href="#content"
+    ><span class="hidden">Scroll Down</span></a
+  >
 </header>
 
 <main id="content" class="content" role="main">
-    
-    
-    
-    
-    
-    
-
-    <div class="extra-pagination inner">
-        <nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-    </div>
-
-    
-        
-<article class="post post">
+  <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/abstract/">1 - Abstract</a></h2>
+      <h1 class="post-title">5 - Finding Communities</h1>
+      <section class="post-meta">
+          
+      </section>
     </header>
-    <section class="post-excerpt">
-      <p>
-          <section class="post-content">
-            <p>Final Fantasy XIV is a massively multiplayer online role-playing game (MMORPG) developed and published by Square Enix. The purpose of this project is to analyze the characters in the game, studying the relations among them, finding communities and performing sentiment analysis.</p>
 
-          </section>
-      </p>
-      
-    </section>
-    <footer class="post-meta">
-        
-        
-        
-            
-        
-        
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/dataset/">2 - Dataset</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-          <section class="post-content">
-            <p>Our dataset consists in the characters' wikis obtained from <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Final Fantasy Fandom Wikipages</a>.</p>
-<p>If you want to download the files containing the characters data <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">click here</a>. (You will have access to a zip file containing a .txt file for each characters of the wiki.)</p>
-<p>To perform sentiment analysis, we&rsquo;ve also used <a href="https://docs.google.com/document/d/1wlFBfhu7wjHlMEVSEZgEHpaaJIQBhrmh-RIdWYGMJZM/edit">a dialogue collection</a>.</p>
-<p>From each character wikipage we obtained the information related to age, race, gender, affiliation and occupation using regular expressions. Then we used this information to create a dataframe of 385 different characters. Afterwards, we searched the pages for links to other characters and created the network.</p>
-
-          </section>
-      </p>
-      
-    </section>
-    <footer class="post-meta">
-        
-        
-        
-            
-        
-        
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/network/">3 - Network</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-          <section class="post-content">
-            <p>The network created contains 385 nodes, each one related to character and 1472 edges. Firstly, we discarded the isolated nodes resulting in 335 remaining nodes. Afterwards, we extracted the Giant Component obtaining the final network which has 320 nodes and 1449 links.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/network.png" alt="Network"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><em>FFXIV (Undirected) Network</em></td>
-</tr>
-</tbody>
-</table>
-<h4 id="31---network-analysis">3.1 - Network Analysis</h4>
-<p>Studying the in-degree we found that the 5 most connected characters are Alphinaud Leveilleur(56), Gaius van Baelsar(37), Y&rsquo;shtola Rhul(35), Thancred Waters(34), Zenos yae Galvus(33).</p>
-<p>Analyzing the out-degree we can see that the 5 most connected characters are Alphinaud Leveilleur(33), Lyse Hext(30), Y&rsquo;shtola Rhul(26), Elidibus(25), Thancred Waters(22).</p>
-<p>The plots of the degree distributions are reported below.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/in-degree.jpeg" alt="In-Degree Distribution"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/out-degree.jpeg" alt="Out-Degree Distribution"></td>
-</tr>
-</tbody>
-</table>
-<p>In-Degree distribution shows that only a few characters have a degree higher than 25, while the great majority of them are between 1-10.</p>
-<p>Out-Degree distribution shows a similar behaviour with the majority of the nodes below a degree of 10.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-          </section>
-      </p>
-      
-    </section>
-    <footer class="post-meta">
-        
-        
-        
-            
-        
-        
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/analysis/">4 - Text Analysis</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-          <section class="post-content">
-            <p>In order to perform the text analysis, we decided to prepare the data by applying tokenization and lemmatization to the character descriptions obtained from the wikipages.
-Words related to the structure of the wiki and not to a specific character of the story, where also removed from the text.</p>
-<p>The frequency distribution of the 75 most common tokens is reported below.
-<img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/frequency-words.jpeg" alt="Frequency Distribution"></p>
-<p>We tried to find the most important words related to each affiliation using both TF and TF-IDF. Below we reported the results for the 3 greatest affiliation:</p>
-<blockquote>
-<p>Garlean Empire, High Houses of Ishgard, Doma</p>
-</blockquote>
-<h4 id="41---word-clouds">4.1 - Word Clouds</h4>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/garlean1.png" alt="Garlean Wordcloud"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/ishgard1.png" alt="Ishgard Wordcloud"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/doma1.png" alt="Doma Wordcloud"></td>
-</tr>
-</tbody>
-</table>
-<p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/wordcloud2.png" alt="Wordcloud"></p>
-
-          </section>
-      </p>
-      
-    </section>
-    <footer class="post-meta">
-        
-        
-        
-            
-        
-        
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/community/">5 - Finding Communities</a></h2>
-    </header>
-    <section class="post-excerpt">
-      <p>
-          <section class="post-content">
-            <p>As we are interested in analyzing the relations amongst the characters. In particular, we want to try to detect communities and study their characteristics. In order to perform this analysis, we are going to apply the Louvain Algorithm for community detection to the undirected network created previously.</p>
+    <section class="post-content"><p>As we are interested in analyzing the relations amongst the characters. In particular, we want to try to detect communities and study their characteristics. In order to perform this analysis, we are going to apply the Louvain Algorithm for community detection to the undirected network created previously.</p>
 <p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/community.png" alt="Community Distribution"></p>
 <p>The algorithm detects 5 small communities that have less than 10 characters, and 9 bigger communities that have between 20 and 50 characters.</p>
 <p>In the following plot the network is represented with a different color for every community.</p>
@@ -700,32 +525,16 @@ Words related to the structure of the wiki and not to a specific character of th
 <p>Characters belonging to the same community, are expected to be more connected to each other in the game compared to character belonging to different communities. To prove this point more accurately, it would be necessary to analyze the game more in deep and gather information regarding the actual story behind each character and their true relations with each other in the game. We will not continue this analysis. Instead, we are going to analyze which words are the most representative of each community and finally, we will study the average sentiment of these communities, to understand if there is a common positive or negative feeling among the character of a group.</p>
 <h4 id="51---common-words-in-the-communities">5.1 - Common words in the communities</h4>
 <p>We identified the most descriptive words related to each community. The objective is to understand if different communities have different related words. We used two different methods: the TF and and the TF-IDF. The first one will take into account how much a specific word appear in the text, while the other will also consider how often that word appear through the whole database, adding value to those words that are more characteristic of a specific community, therefore more relevant.</p>
+</section>
 
-          </section>
-      </p>
-      
-    </section>
-    <footer class="post-meta">
-        
-        
-        
-            
-        
-        
+    <footer class="post-footer">
+       <section class="author">
+
+</section>
+  
     </footer>
-</article>
-
-    
-
-    <nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
-</nav>
-
-
+  </article>
 </main>
-
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="">Final Fantasy XIV Network</a></section>
         
