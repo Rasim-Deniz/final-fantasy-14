@@ -83,9 +83,9 @@
 
 	<div class="extra-pagination inner">
     <nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
+  
+  <span class="page-number">Page 1 of 1</span>
+  
 </nav>
 
 	</div>
@@ -99,7 +99,15 @@
     <section class="post-excerpt">
       <p>
           <section class="post-content">
-            <p>Final Fantasy XIV is a massively multiplayer online role-playing game (MMORPG) developed and published by Square Enix. The purpose of this project is to analyze the characters in the game, studying the relations among them, finding communities and performing sentiment analysis.</p>
+            <p>The Final Fantasy series had an incredible effect on the gaming world. Developed by Square Enix and released for the Nintendo Entertainment System (NES) in 1987, the game was considered an outlier at the time: games had simplistic plots and little to no character development. For this reason, the game was named &ldquo;Final Fantasy,&rdquo; for the game&rsquo;s director thought it would be a failure for being a strange game at the time and would end his career. Nonetheless, history differed from expectations. Known for its rich lore, deep interactions between characters, and outstanding music, the series changed the role-playing genre forever. The Final Fantasy series became an international hit, selling more than 164 million units worldwide as of October 2021.</p>
+<p>Out of all the 95 Final Fantasy games, we chose Final Fantasy XIV for the following reasons:</p>
+<ul>
+<li>It is the latest massive multiplayer online role-playing game, which has a relatively large number of characters, clans, and races.</li>
+<li>The wiki is well documented and detailed.</li>
+<li>Non-linear storyline.</li>
+</ul>
+<p>The final goal of this project is to understand the game&rsquo;s characters and world better through network and text analysis, comprehend how the characters are related to each other, and see the importance of the characters in their respective communities.</p>
+<p>If you are interested about how we reached our goal or you want to see our code you can check this link to have access to our <strong><a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Explainer Notebook</a></strong>.</p>
 
           </section>
       </p>
@@ -124,10 +132,41 @@
     <section class="post-excerpt">
       <p>
           <section class="post-content">
-            <p>Our dataset consists in the characters' wikis obtained from <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Final Fantasy Fandom Wikipages</a>.</p>
-<p>If you want to download the files containing the characters data <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">click here</a>. (You will have access to a zip file containing a .txt file for each characters of the wiki.)</p>
-<p>To perform sentiment analysis, we&rsquo;ve also used <a href="https://docs.google.com/document/d/1wlFBfhu7wjHlMEVSEZgEHpaaJIQBhrmh-RIdWYGMJZM/edit">a dialogue collection</a>.</p>
-<p>From each character wikipage we obtained the information related to age, race, gender, affiliation and occupation using regular expressions. Then we used this information to create a dataframe of 385 different characters. Afterwards, we searched the pages for links to other characters and created the network.</p>
+            <p>We analyzed two datasets for Final Fantasy XIV:</p>
+<ul>
+<li>
+<h5 id="the-fan-wiki-of-final-fantasy-xiv">The fan wiki of Final Fantasy XIV</h5>
+</li>
+</ul>
+<p>The <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Final Fantasy XIV&rsquo;s wiki</a> was used to download all characters' descriptions and attributes.</p>
+<p>The data was extracted using the fandom wiki&rsquo;s API and stored in JSON. Regular expressions were utilized to extract the description of each character along with the attributes of interest: race and affiliation. Other attributes were also extracted: gender, age, and occupation.</p>
+<p>If you want to download the files containing the characters data <a href="https://github.com/Rasim-Deniz/final-fantasy-14-source/tree/master/datasets/project/files/ff14_chars_json.zip">click here</a>. (You will have access to a zip file containing a .txt file for each characters of the wiki.)</p>
+<ul>
+<li>
+<h5 id="the-games-dialogue">The game&rsquo;s dialogue</h5>
+</li>
+</ul>
+<p>All the <a href="https://docs.google.com/document/d/1wlFBfhu7wjHlMEVSEZgEHpaaJIQBhrmh-RIdWYGMJZM/edit">dialogue between characters</a> was obtained for text and sentiment analysis to explore the game&rsquo;s characters world through text interactions.</p>
+<h4 id="21---data-preprocessing">2.1 - Data Preprocessing</h4>
+<p>Our strategy was to use regular expressions that have more false positives than false negatives and then clean the edge cases manually based on our knowledge of the dataset. The following data preprocessing was performed:</p>
+<ul>
+<li><strong>Duplicates Removal</strong>: Some characters are referred to using different names in the wiki. This was detected and fixed by keeping only the unique characters.</li>
+<li><strong>Redirects Handling</strong>: The redirects were detected using a regular expression, then the correct character pages were manually hard-coded to refer to the right link</li>
+<li><strong>Class Re-Assignment</strong>: Some classes have different synonyms. For instance, the race &ldquo;hume&rdquo; is the same as &ldquo;hyur.&rdquo; This was fixed by re-assigning the same categories in such cases.</li>
+<li><strong>Regex Fixing</strong>: Edge cases in which our regular expressions obtained false positives and negatives were fixed manually by assigning the false values to the correct ones.</li>
+</ul>
+<p>For text analysis, the following was done:</p>
+<ul>
+<li><strong>Removal of stop words and punctuation</strong>: Common stop words and punctuation were deleted so that the text analysis is not influenced by it</li>
+<li><strong>Tokenization and lemmatization</strong>: The text was tokenized and lemmatized in the dialogue and for each character.</li>
+</ul>
+<h4 id="22---data-statistics">2.2 - Data Statistics:</h4>
+<p>Number of characters: <em><strong>385</strong></em></p>
+<p>Total Data size: <em><strong>3.21 MB</strong></em></p>
+<p>Number of links (Directed): <em><strong>1477</strong></em></p>
+<p>Number of links (Undirected): <em><strong>1131</strong></em></p>
+<p>Most common characters (in-degree): Alphinaud Leveilleur, <em><strong>56</strong></em></p>
+<p>Most common characters (out-degree): Alphinaud Leveilleur, <em><strong>33</strong></em></p>
 
           </section>
       </p>
@@ -214,7 +253,7 @@
             <p>In order to perform the text analysis, we decided to prepare the data by applying tokenization and lemmatization to the character descriptions obtained from the wikipages.
 Words related to the structure of the wiki and not to a specific character of the story, where also removed from the text.</p>
 <p>The frequency distribution of the 75 most common tokens is reported below.
-<img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/frequency-words.jpeg" alt="Frequency Distribution"></p>
+<img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/frequency-words.png" alt="Frequency Distribution"></p>
 <p>We tried to find the most important words related to each affiliation using both TF and TF-IDF. Below we reported the results for the 3 greatest affiliation:</p>
 <blockquote>
 <p>Garlean Empire, High Houses of Ishgard, Doma</p>
@@ -703,6 +742,147 @@ Words related to the structure of the wiki and not to a specific character of th
 <p>Characters belonging to the same community, are expected to be more connected to each other in the game compared to character belonging to different communities. To prove this point more accurately, it would be necessary to analyze the game more in deep and gather information regarding the actual story behind each character and their true relations with each other in the game. We will not continue this analysis. Instead, we are going to analyze which words are the most representative of each community and finally, we will study the average sentiment of these communities, to understand if there is a common positive or negative feeling among the character of a group.</p>
 <h4 id="51---common-words-in-the-communities">5.1 - Common words in the communities</h4>
 <p>We identified the most descriptive words related to each community. The objective is to understand if different communities have different related words. We used two different methods: the TF and and the TF-IDF. The first one will take into account how much a specific word appear in the text, while the other will also consider how often that word appear through the whole database, adding value to those words that are more characteristic of a specific community, therefore more relevant.</p>
+<p>The most common words using TF for the top 5 communities are like given below:</p>
+<table>
+<thead>
+<tr>
+<th>Alisaie Leveilleur&rsquo;s community</th>
+<th>Estinien Wyrmblood&rsquo;s community</th>
+<th>Warrior of Light&rsquo;s community</th>
+<th>Alphinaud Leveilleur&rsquo;s community</th>
+<th>Edmont de Fortemps&rsquo;s community</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>man</td>
+<td>garuda</td>
+<td>yoshida</td>
+<td>ga</td>
+<td>marcelloix</td>
+</tr>
+<tr>
+<td>woman</td>
+<td>final</td>
+<td>naoki</td>
+<td>bu</td>
+<td>character</td>
+</tr>
+<tr>
+<td>player</td>
+<td>fantasy</td>
+<td>final</td>
+<td>alisaie</td>
+<td>final</td>
+</tr>
+<tr>
+<td>hyuran</td>
+<td>messenger</td>
+<td>fantasy</td>
+<td>kobold</td>
+<td>fantasy</td>
+</tr>
+<tr>
+<td>imp</td>
+<td>xv</td>
+<td>april</td>
+<td>final</td>
+<td>ehll</td>
+</tr>
+</tbody>
+</table>
+<p>The most common words using TF-IDF for the top 5 communities are like given below:</p>
+<table>
+<thead>
+<tr>
+<th>Alisaie Leveilleur&rsquo;s community</th>
+<th>Estinien Wyrmblood&rsquo;s community</th>
+<th>Warrior of Light&rsquo;s community</th>
+<th>Alphinaud Leveilleur&rsquo;s community</th>
+<th>Edmont de Fortemps&rsquo;s community</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>woman</td>
+<td>garuda</td>
+<td>yoshida</td>
+<td>alisaie</td>
+<td>marcelloix</td>
+</tr>
+<tr>
+<td>hyuran</td>
+<td>messenger</td>
+<td>naoki</td>
+<td>kobold</td>
+<td>ehll</td>
+</tr>
+<tr>
+<td>imp</td>
+<td>wind</td>
+<td>april</td>
+<td>titan</td>
+<td>francel</td>
+</tr>
+<tr>
+<td>unsavory</td>
+<td>xv</td>
+<td>fool</td>
+<td>warrior</td>
+<td>family</td>
+</tr>
+<tr>
+<td>nero</td>
+<td>statue</td>
+<td>director</td>
+<td>bu</td>
+<td>craftsman</td>
+</tr>
+</tbody>
+</table>
+<p>It appear clear how the TF-IDF analysis gives more interesting results in identifying the most relevant words of a community, by eliminating recurring words as &lsquo;fantasy&rsquo;, &lsquo;player&rsquo; and &lsquo;final&rsquo; that are clearly related to the game itself, and thus very common in all the communities. We can also see from the results that the second method does not ever return the same word for different communities, as it happen in the TF analysis, confirming that the TF-IDF is more accurate in detecting the relevant words in a community.</p>
+
+          </section>
+      </p>
+      
+    </section>
+    <footer class="post-meta">
+        
+        
+        
+            
+        
+        
+    </footer>
+</article>
+
+	
+	   
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="https://Rasim-Deniz.github.io/final-fantasy-14/post/sentiment/">6 - Sentiment Analysis</a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p>
+          <section class="post-content">
+            <p>We now proceed performing a sentiment analysis of the communities, after we gather the adequate text information related to the story of the characters.</p>
+<p>We are going to perform different analyses. Firstly, we are going to use the LabMT dataset, to calculate the sentiment of each token, created from the textual description of the characters obtained from the wikipages, after proper tokenization and lemmatization. Subsequently, we are going to repeat the same process, this time using the text obtained from written dialogues extracted from the game. This second analysis is expected to return a better understanding of the sentiment of the characters, since it will contain more textual information related to the feelings and sentiments of the characters during the game.</p>
+<p>Lastly, we will use the VADER sentiment analysis tool, applied on the dialogues text. This method will also take into account different aspects of the speeches, like the use of punctuation, capital letters and specific expressions.</p>
+<h4 id="61---sentiment-analysis-1">6.1 - Sentiment Analysis 1</h4>
+<p><strong>Data</strong>: Text description from the Wikipages</p>
+<p><strong>Method</strong>: LabMT</p>
+<p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/sentiment-distribution.png" alt="Sentiment Distribution"></p>
+<p>All values are just above 5, showing that there is a slight positive sentiment, althogh since the text used for this analysis was collected from the descriptions of the characters, the information they carry about feelings and sentiments of the characters is quite poor, hence the result is expected. We now repeat the analysis with a more relevant database: written dialogues from the videogame.</p>
+<h4 id="62---sentiment-analysis-2">6.2 - Sentiment Analysis 2</h4>
+<p><strong>Data</strong>: Dialogues from the Videogame</p>
+<p><strong>Method</strong>: LabMT</p>
+<p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/average-sentiment.png" alt="Average Sentiment"></p>
+<p>As a result, all values are all between the value 5 and 6, meaning there is a slight positive average sentiment in all communities. The error bars do not show a great variance in the values, meaning that the character in every community take all similar values. We now proceed with the VADER analysis, using the Dialogue dataset.</p>
+<h4 id="63---sentiment-analysis-3">6.3 - Sentiment Analysis 3</h4>
+<p><strong>Data</strong>: Dialogues from the Videogame</p>
+<p><strong>Method</strong>: VADER</p>
+<p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/average-sentiment-vader.png" alt="Average Sentiment Vader"></p>
+<p>The VADER analysis gives more interesting results. All communities scored a value greater than zero, that means the average sentiment is positive, in particular, the Warrior of Light (Final Fantasy XIV) &rsquo;s community, scored 0.869, meaning a great positivity in the text. In this case we can also see from the error bars that there is much more variance in the characters of one community. For example, the Lyse Hext &rsquo;s community scored the positive value 0.636 even though the error bars indicate at least one character got a negative result.</p>
 
           </section>
       </p>
@@ -721,9 +901,9 @@ Words related to the structure of the wiki and not to a specific character of th
 	
 
 	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 1</span>
-	
+  
+  <span class="page-number">Page 1 of 1</span>
+  
 </nav>
 
 </main>

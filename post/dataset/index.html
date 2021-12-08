@@ -83,10 +83,41 @@
       </section>
     </header>
 
-    <section class="post-content"><p>Our dataset consists in the characters' wikis obtained from <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Final Fantasy Fandom Wikipages</a>.</p>
-<p>If you want to download the files containing the characters data <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">click here</a>. (You will have access to a zip file containing a .txt file for each characters of the wiki.)</p>
-<p>To perform sentiment analysis, we&rsquo;ve also used <a href="https://docs.google.com/document/d/1wlFBfhu7wjHlMEVSEZgEHpaaJIQBhrmh-RIdWYGMJZM/edit">a dialogue collection</a>.</p>
-<p>From each character wikipage we obtained the information related to age, race, gender, affiliation and occupation using regular expressions. Then we used this information to create a dataframe of 385 different characters. Afterwards, we searched the pages for links to other characters and created the network.</p>
+    <section class="post-content"><p>We analyzed two datasets for Final Fantasy XIV:</p>
+<ul>
+<li>
+<h5 id="the-fan-wiki-of-final-fantasy-xiv">The fan wiki of Final Fantasy XIV</h5>
+</li>
+</ul>
+<p>The <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Final Fantasy XIV&rsquo;s wiki</a> was used to download all characters' descriptions and attributes.</p>
+<p>The data was extracted using the fandom wiki&rsquo;s API and stored in JSON. Regular expressions were utilized to extract the description of each character along with the attributes of interest: race and affiliation. Other attributes were also extracted: gender, age, and occupation.</p>
+<p>If you want to download the files containing the characters data <a href="https://github.com/Rasim-Deniz/final-fantasy-14-source/tree/master/datasets/project/files/ff14_chars_json.zip">click here</a>. (You will have access to a zip file containing a .txt file for each characters of the wiki.)</p>
+<ul>
+<li>
+<h5 id="the-games-dialogue">The game&rsquo;s dialogue</h5>
+</li>
+</ul>
+<p>All the <a href="https://docs.google.com/document/d/1wlFBfhu7wjHlMEVSEZgEHpaaJIQBhrmh-RIdWYGMJZM/edit">dialogue between characters</a> was obtained for text and sentiment analysis to explore the game&rsquo;s characters world through text interactions.</p>
+<h4 id="21---data-preprocessing">2.1 - Data Preprocessing</h4>
+<p>Our strategy was to use regular expressions that have more false positives than false negatives and then clean the edge cases manually based on our knowledge of the dataset. The following data preprocessing was performed:</p>
+<ul>
+<li><strong>Duplicates Removal</strong>: Some characters are referred to using different names in the wiki. This was detected and fixed by keeping only the unique characters.</li>
+<li><strong>Redirects Handling</strong>: The redirects were detected using a regular expression, then the correct character pages were manually hard-coded to refer to the right link</li>
+<li><strong>Class Re-Assignment</strong>: Some classes have different synonyms. For instance, the race &ldquo;hume&rdquo; is the same as &ldquo;hyur.&rdquo; This was fixed by re-assigning the same categories in such cases.</li>
+<li><strong>Regex Fixing</strong>: Edge cases in which our regular expressions obtained false positives and negatives were fixed manually by assigning the false values to the correct ones.</li>
+</ul>
+<p>For text analysis, the following was done:</p>
+<ul>
+<li><strong>Removal of stop words and punctuation</strong>: Common stop words and punctuation were deleted so that the text analysis is not influenced by it</li>
+<li><strong>Tokenization and lemmatization</strong>: The text was tokenized and lemmatized in the dialogue and for each character.</li>
+</ul>
+<h4 id="22---data-statistics">2.2 - Data Statistics:</h4>
+<p>Number of characters: <em><strong>385</strong></em></p>
+<p>Total Data size: <em><strong>3.21 MB</strong></em></p>
+<p>Number of links (Directed): <em><strong>1477</strong></em></p>
+<p>Number of links (Undirected): <em><strong>1131</strong></em></p>
+<p>Most common characters (in-degree): Alphinaud Leveilleur, <em><strong>56</strong></em></p>
+<p>Most common characters (out-degree): Alphinaud Leveilleur, <em><strong>33</strong></em></p>
 </section>
 
     <footer class="post-footer">

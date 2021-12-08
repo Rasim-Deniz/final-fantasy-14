@@ -14,7 +14,7 @@
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/abstract/</guid>
-      <description>Final Fantasy XIV is a massively multiplayer online role-playing game (MMORPG) developed and published by Square Enix. The purpose of this project is to analyze the characters in the game, studying the relations among them, finding communities and performing sentiment analysis.</description>
+      <description>The Final Fantasy series had an incredible effect on the gaming world. Developed by Square Enix and released for the Nintendo Entertainment System (NES) in 1987, the game was considered an outlier at the time: games had simplistic plots and little to no character development. For this reason, the game was named &amp;ldquo;Final Fantasy,&amp;rdquo; for the game&amp;rsquo;s director thought it would be a failure for being a strange game at the time and would end his career.</description>
     </item>
     
     <item>
@@ -23,10 +23,9 @@
       <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/dataset/</guid>
-      <description>Our dataset consists in the characters&#39; wikis obtained from Final Fantasy Fandom Wikipages.
-If you want to download the files containing the characters data click here. (You will have access to a zip file containing a .txt file for each characters of the wiki.)
-To perform sentiment analysis, we&amp;rsquo;ve also used a dialogue collection.
-From each character wikipage we obtained the information related to age, race, gender, affiliation and occupation using regular expressions.</description>
+      <description>We analyzed two datasets for Final Fantasy XIV:
+  The fan wiki of Final Fantasy XIV   The Final Fantasy XIV&amp;rsquo;s wiki was used to download all characters&#39; descriptions and attributes.
+The data was extracted using the fandom wiki&amp;rsquo;s API and stored in JSON. Regular expressions were utilized to extract the description of each character along with the attributes of interest: race and affiliation. Other attributes were also extracted: gender, age, and occupation.</description>
     </item>
     
     <item>
@@ -57,6 +56,16 @@ The frequency distribution of the 75 most common tokens is reported below. We tr
       <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/community/</guid>
       <description>As we are interested in analyzing the relations amongst the characters. In particular, we want to try to detect communities and study their characteristics. In order to perform this analysis, we are going to apply the Louvain Algorithm for community detection to the undirected network created previously.
 The algorithm detects 5 small communities that have less than 10 characters, and 9 bigger communities that have between 20 and 50 characters.</description>
+    </item>
+    
+    <item>
+      <title>6 - Sentiment Analysis</title>
+      <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/sentiment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/sentiment/</guid>
+      <description>We now proceed performing a sentiment analysis of the communities, after we gather the adequate text information related to the story of the characters.
+We are going to perform different analyses. Firstly, we are going to use the LabMT dataset, to calculate the sentiment of each token, created from the textual description of the characters obtained from the wikipages, after proper tokenization and lemmatization. Subsequently, we are going to repeat the same process, this time using the text obtained from written dialogues extracted from the game.</description>
     </item>
     
   </channel>

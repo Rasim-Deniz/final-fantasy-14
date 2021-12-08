@@ -525,6 +525,105 @@
 <p>Characters belonging to the same community, are expected to be more connected to each other in the game compared to character belonging to different communities. To prove this point more accurately, it would be necessary to analyze the game more in deep and gather information regarding the actual story behind each character and their true relations with each other in the game. We will not continue this analysis. Instead, we are going to analyze which words are the most representative of each community and finally, we will study the average sentiment of these communities, to understand if there is a common positive or negative feeling among the character of a group.</p>
 <h4 id="51---common-words-in-the-communities">5.1 - Common words in the communities</h4>
 <p>We identified the most descriptive words related to each community. The objective is to understand if different communities have different related words. We used two different methods: the TF and and the TF-IDF. The first one will take into account how much a specific word appear in the text, while the other will also consider how often that word appear through the whole database, adding value to those words that are more characteristic of a specific community, therefore more relevant.</p>
+<p>The most common words using TF for the top 5 communities are like given below:</p>
+<table>
+<thead>
+<tr>
+<th>Alisaie Leveilleur&rsquo;s community</th>
+<th>Estinien Wyrmblood&rsquo;s community</th>
+<th>Warrior of Light&rsquo;s community</th>
+<th>Alphinaud Leveilleur&rsquo;s community</th>
+<th>Edmont de Fortemps&rsquo;s community</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>man</td>
+<td>garuda</td>
+<td>yoshida</td>
+<td>ga</td>
+<td>marcelloix</td>
+</tr>
+<tr>
+<td>woman</td>
+<td>final</td>
+<td>naoki</td>
+<td>bu</td>
+<td>character</td>
+</tr>
+<tr>
+<td>player</td>
+<td>fantasy</td>
+<td>final</td>
+<td>alisaie</td>
+<td>final</td>
+</tr>
+<tr>
+<td>hyuran</td>
+<td>messenger</td>
+<td>fantasy</td>
+<td>kobold</td>
+<td>fantasy</td>
+</tr>
+<tr>
+<td>imp</td>
+<td>xv</td>
+<td>april</td>
+<td>final</td>
+<td>ehll</td>
+</tr>
+</tbody>
+</table>
+<p>The most common words using TF-IDF for the top 5 communities are like given below:</p>
+<table>
+<thead>
+<tr>
+<th>Alisaie Leveilleur&rsquo;s community</th>
+<th>Estinien Wyrmblood&rsquo;s community</th>
+<th>Warrior of Light&rsquo;s community</th>
+<th>Alphinaud Leveilleur&rsquo;s community</th>
+<th>Edmont de Fortemps&rsquo;s community</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>woman</td>
+<td>garuda</td>
+<td>yoshida</td>
+<td>alisaie</td>
+<td>marcelloix</td>
+</tr>
+<tr>
+<td>hyuran</td>
+<td>messenger</td>
+<td>naoki</td>
+<td>kobold</td>
+<td>ehll</td>
+</tr>
+<tr>
+<td>imp</td>
+<td>wind</td>
+<td>april</td>
+<td>titan</td>
+<td>francel</td>
+</tr>
+<tr>
+<td>unsavory</td>
+<td>xv</td>
+<td>fool</td>
+<td>warrior</td>
+<td>family</td>
+</tr>
+<tr>
+<td>nero</td>
+<td>statue</td>
+<td>director</td>
+<td>bu</td>
+<td>craftsman</td>
+</tr>
+</tbody>
+</table>
+<p>It appear clear how the TF-IDF analysis gives more interesting results in identifying the most relevant words of a community, by eliminating recurring words as &lsquo;fantasy&rsquo;, &lsquo;player&rsquo; and &lsquo;final&rsquo; that are clearly related to the game itself, and thus very common in all the communities. We can also see from the results that the second method does not ever return the same word for different communities, as it happen in the TF analysis, confirming that the TF-IDF is more accurate in detecting the relevant words in a community.</p>
 </section>
 
     <footer class="post-footer">
