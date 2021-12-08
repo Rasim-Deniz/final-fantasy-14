@@ -87,27 +87,23 @@
 Words related to the structure of the wiki and not to a specific character of the story, where also removed from the text.</p>
 <p>The frequency distribution of the 75 most common tokens is reported below.
 <img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/frequency-words.png" alt="Frequency Distribution"></p>
-<p>We tried to find the most important words related to each affiliation using both TF and TF-IDF. Below we reported the results for the 3 greatest affiliation:</p>
-<blockquote>
-<p>Garlean Empire, High Houses of Ishgard, Doma</p>
-</blockquote>
+<p>The frequency plot of the most common words is as expected: the two most common words are &ldquo;final&rdquo; and &ldquo;fantasy,&rdquo; followed by &ldquo;warrior&rdquo; and &ldquo;light.&rdquo; It is worth mentioning that the main character of the game is named &ldquo;The Warrior of Light.&rdquo; Therefore, the high frequency of these two words is unsurprising.</p>
 <h4 id="41---word-clouds">4.1 - Word Clouds</h4>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/garlean1.png" alt="Garlean Wordcloud"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/ishgard1.png" alt="Ishgard Wordcloud"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/doma1.png" alt="Doma Wordcloud"></td>
-</tr>
-</tbody>
-</table>
+<p>Word clouds are a visual representation of text data, typically used to depict keyword metadata (tags) on websites, or to visualize free form text. In this case, the tags are single words, and the importance of each tag is shown with font size: bigger term means greater weight.</p>
+<p><strong>Goal:</strong> Analyze the word cloud for some groups of characters</p>
+<p><strong>Strategy:</strong></p>
+<ul>
+<li>Obtain the 3 greatest Affiliations, and the characters who belong to them.</li>
+<li>Calculate the TF and TF-IDF values for each affiliation</li>
+<li>Analyze the wordcloud over the text previously obtained.</li>
+</ul>
+<p>The greatest Affiliations are:</p>
+<blockquote>
+<p>Garlean Empire 16</p>
+<p>High Houses of Ishgard 10</p>
+<p>Doma 9</p>
+</blockquote>
+<p>The output of the wordclouds we obtained are given below.</p>
 <p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/wordcloud2.png" alt="Wordcloud"></p>
 </section>
 

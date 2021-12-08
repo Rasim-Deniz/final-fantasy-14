@@ -107,7 +107,7 @@
 <li>Non-linear storyline.</li>
 </ul>
 <p>The final goal of this project is to understand the game&rsquo;s characters and world better through network and text analysis, comprehend how the characters are related to each other, and see the importance of the characters in their respective communities.</p>
-<p>If you are interested about how we reached our goal or you want to see our code you can check this link to have access to our <strong><a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Explainer Notebook</a></strong>.</p>
+<p>If you are interested about how we reached our goal or you want to see our code you can check this link to have access to our <strong><em><a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Explainer Notebook</a></em></strong>.</p>
 
           </section>
       </p>
@@ -138,15 +138,15 @@
 <h5 id="the-fan-wiki-of-final-fantasy-xiv">The fan wiki of Final Fantasy XIV</h5>
 </li>
 </ul>
-<p>The <a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Final Fantasy XIV&rsquo;s wiki</a> was used to download all characters' descriptions and attributes.</p>
+<p>The <strong><em><a href="https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV_characters">Final Fantasy XIV&rsquo;s wiki</a></em></strong> was used to download all characters' descriptions and attributes.</p>
 <p>The data was extracted using the fandom wiki&rsquo;s API and stored in JSON. Regular expressions were utilized to extract the description of each character along with the attributes of interest: race and affiliation. Other attributes were also extracted: gender, age, and occupation.</p>
-<p>If you want to download the files containing the characters data <a href="https://github.com/Rasim-Deniz/final-fantasy-14-source/tree/master/datasets/project/files/ff14_chars_json.zip">click here</a>. (You will have access to a zip file containing a .txt file for each characters of the wiki.)</p>
+<p>If you want to download the files containing the characters data <strong><em><a href="https://Rasim-Deniz.github.io/final-fantasy-14/project/files/ff14_chars_json.zip">click here</a></em></strong>. (You will have access to a zip file containing a .txt file for each characters of the wiki.)</p>
 <ul>
 <li>
 <h5 id="the-games-dialogue">The game&rsquo;s dialogue</h5>
 </li>
 </ul>
-<p>All the <a href="https://docs.google.com/document/d/1wlFBfhu7wjHlMEVSEZgEHpaaJIQBhrmh-RIdWYGMJZM/edit">dialogue between characters</a> was obtained for text and sentiment analysis to explore the game&rsquo;s characters world through text interactions.</p>
+<p>All the <strong><em><a href="https://docs.google.com/document/d/1wlFBfhu7wjHlMEVSEZgEHpaaJIQBhrmh-RIdWYGMJZM/edit">dialogue between characters</a></em></strong> was obtained for text and sentiment analysis to explore the game&rsquo;s characters world through text interactions.</p>
 <h4 id="21---data-preprocessing">2.1 - Data Preprocessing</h4>
 <p>Our strategy was to use regular expressions that have more false positives than false negatives and then clean the edge cases manually based on our knowledge of the dataset. The following data preprocessing was performed:</p>
 <ul>
@@ -204,9 +204,25 @@
 </tr>
 </tbody>
 </table>
+<p>While there are significant hubs, the network is not dominated by a single entity. It is expected that in an online RPG, the protagonist is not as critical to the game&rsquo;s plot development relative to single-player games.</p>
 <h4 id="31---network-analysis">3.1 - Network Analysis</h4>
-<p>Studying the in-degree we found that the 5 most connected characters are Alphinaud Leveilleur(56), Gaius van Baelsar(37), Y&rsquo;shtola Rhul(35), Thancred Waters(34), Zenos yae Galvus(33).</p>
-<p>Analyzing the out-degree we can see that the 5 most connected characters are Alphinaud Leveilleur(33), Lyse Hext(30), Y&rsquo;shtola Rhul(26), Elidibus(25), Thancred Waters(22).</p>
+<p>Studying the in-degree we found that the 5 most connected characters are:</p>
+<ol>
+<li>Alphinaud Leveilleur(57)</li>
+<li>Gaius van Baelsar(37)</li>
+<li>Y&rsquo;shtola Rhul(35)</li>
+<li>Zenos yae Galvus(35)</li>
+<li>Thancred Waters(34)</li>
+</ol>
+<p>Analyzing the out-degree we can see that the 5 most connected characters are:</p>
+<ol>
+<li>Alphinaud Leveilleur(33)</li>
+<li>Lyse Hext(30)</li>
+<li>Y&rsquo;shtola Rhul(26)</li>
+<li>Elidibus(25)</li>
+<li>Thancred Waters(22)</li>
+</ol>
+<p>Alphinaud Leveilleur is the most connected character both in the in-degree and out-degree sets. He is a significant character in the game. It might be surprising that the main character is not the most connected one, but it is sensible in the context of the dataset: the protagonist of the game is silent. Typically in such plots, a companion character is talkative and well-connected. This is to minimize boredom and break the monotone of silence in the game.</p>
 <p>The plots of the degree distributions are reported below.</p>
 <table>
 <thead>
@@ -217,15 +233,46 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/in-degree.jpeg" alt="In-Degree Distribution"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/out-degree.jpeg" alt="Out-Degree Distribution"></td>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/in-degree.png" alt="In-Degree Distribution"></td>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/out-degree.png" alt="Out-Degree Distribution"></td>
 </tr>
 </tbody>
 </table>
-<p>In-Degree distribution shows that only a few characters have a degree higher than 25, while the great majority of them are between 1-10.</p>
+<p>In-Degree distribution shows that only a few characters have a degree higher than 25, while the great majority of them are between 0-10.</p>
 <p>Out-Degree distribution shows a similar behaviour with the majority of the nodes below a degree of 10.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p>Graphically, the in-degree distribution appears to follow a power law distribution, indicating a scale-free network (real network). The out-degree distribution seems to follow a power law distribution, but it is less skewed to the right, and is more difficult to interpret.</p>
+<p>We use the powerlaw function below to fit a power distribution and get the gamma values for further analysis.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/powerlaw1.png" alt="In-Degree Powerlaw"></td>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/powerlaw2.png" alt="Out-Degree Powerlaw"></td>
+</tr>
+</tbody>
+</table>
+<p>For the in-degree distribution, the exponent value (γ=2.33\gamma = 2.33γ=2.33) indicates that the network is in the scale-free regime (ultra-small world). As for the out-degree distribution, the exponent is almost equal to the critical value of 3 (γ=3.01 \gamma = 3.01γ=3.01.). While this makes the out-degree distribution more random-like, it is still not the same as a random network, for the value indicate the presence of a double logarithmic correction lnlnNlnlnNlnlnN which shrinks the distances of this network relative to a random network.</p>
+<p>We will compare our network below to a random one of the same probability for further confirmation.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/random.png" alt="Random Network"></td>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/degree-dist.png" alt="Degree Distribution of Wiki"></td>
+</tr>
+</tbody>
+</table>
+<p>As seen above, the network&rsquo;s degree distribution significantly deviates from the expected random network. Our graphical, power-law and random network comparison are thus in agreement.</p>
 
           </section>
       </p>
@@ -254,27 +301,23 @@
 Words related to the structure of the wiki and not to a specific character of the story, where also removed from the text.</p>
 <p>The frequency distribution of the 75 most common tokens is reported below.
 <img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/frequency-words.png" alt="Frequency Distribution"></p>
-<p>We tried to find the most important words related to each affiliation using both TF and TF-IDF. Below we reported the results for the 3 greatest affiliation:</p>
-<blockquote>
-<p>Garlean Empire, High Houses of Ishgard, Doma</p>
-</blockquote>
+<p>The frequency plot of the most common words is as expected: the two most common words are &ldquo;final&rdquo; and &ldquo;fantasy,&rdquo; followed by &ldquo;warrior&rdquo; and &ldquo;light.&rdquo; It is worth mentioning that the main character of the game is named &ldquo;The Warrior of Light.&rdquo; Therefore, the high frequency of these two words is unsurprising.</p>
 <h4 id="41---word-clouds">4.1 - Word Clouds</h4>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/garlean1.png" alt="Garlean Wordcloud"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/ishgard1.png" alt="Ishgard Wordcloud"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/doma1.png" alt="Doma Wordcloud"></td>
-</tr>
-</tbody>
-</table>
+<p>Word clouds are a visual representation of text data, typically used to depict keyword metadata (tags) on websites, or to visualize free form text. In this case, the tags are single words, and the importance of each tag is shown with font size: bigger term means greater weight.</p>
+<p><strong>Goal:</strong> Analyze the word cloud for some groups of characters</p>
+<p><strong>Strategy:</strong></p>
+<ul>
+<li>Obtain the 3 greatest Affiliations, and the characters who belong to them.</li>
+<li>Calculate the TF and TF-IDF values for each affiliation</li>
+<li>Analyze the wordcloud over the text previously obtained.</li>
+</ul>
+<p>The greatest Affiliations are:</p>
+<blockquote>
+<p>Garlean Empire 16</p>
+<p>High Houses of Ishgard 10</p>
+<p>Doma 9</p>
+</blockquote>
+<p>The output of the wordclouds we obtained are given below.</p>
 <p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/wordcloud2.png" alt="Wordcloud"></p>
 
           </section>
@@ -300,7 +343,7 @@ Words related to the structure of the wiki and not to a specific character of th
     <section class="post-excerpt">
       <p>
           <section class="post-content">
-            <p>As we are interested in analyzing the relations amongst the characters. In particular, we want to try to detect communities and study their characteristics. In order to perform this analysis, we are going to apply the Louvain Algorithm for community detection to the undirected network created previously.</p>
+            <p>As we are interested in analyzing the relations amongst the characters, we want to try to detect communities and study their characteristics. In order to perform this analysis, we are going to apply the Louvain Algorithm for community detection to the undirected network created previously.</p>
 <p><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/community.png" alt="Community Distribution"></p>
 <p>The algorithm detects 5 small communities that have less than 10 characters, and 9 bigger communities that have between 20 and 50 characters.</p>
 <p>In the following plot the network is represented with a different color for every community.</p>

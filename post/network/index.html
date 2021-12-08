@@ -96,9 +96,25 @@
 </tr>
 </tbody>
 </table>
+<p>While there are significant hubs, the network is not dominated by a single entity. It is expected that in an online RPG, the protagonist is not as critical to the game&rsquo;s plot development relative to single-player games.</p>
 <h4 id="31---network-analysis">3.1 - Network Analysis</h4>
-<p>Studying the in-degree we found that the 5 most connected characters are Alphinaud Leveilleur(56), Gaius van Baelsar(37), Y&rsquo;shtola Rhul(35), Thancred Waters(34), Zenos yae Galvus(33).</p>
-<p>Analyzing the out-degree we can see that the 5 most connected characters are Alphinaud Leveilleur(33), Lyse Hext(30), Y&rsquo;shtola Rhul(26), Elidibus(25), Thancred Waters(22).</p>
+<p>Studying the in-degree we found that the 5 most connected characters are:</p>
+<ol>
+<li>Alphinaud Leveilleur(57)</li>
+<li>Gaius van Baelsar(37)</li>
+<li>Y&rsquo;shtola Rhul(35)</li>
+<li>Zenos yae Galvus(35)</li>
+<li>Thancred Waters(34)</li>
+</ol>
+<p>Analyzing the out-degree we can see that the 5 most connected characters are:</p>
+<ol>
+<li>Alphinaud Leveilleur(33)</li>
+<li>Lyse Hext(30)</li>
+<li>Y&rsquo;shtola Rhul(26)</li>
+<li>Elidibus(25)</li>
+<li>Thancred Waters(22)</li>
+</ol>
+<p>Alphinaud Leveilleur is the most connected character both in the in-degree and out-degree sets. He is a significant character in the game. It might be surprising that the main character is not the most connected one, but it is sensible in the context of the dataset: the protagonist of the game is silent. Typically in such plots, a companion character is talkative and well-connected. This is to minimize boredom and break the monotone of silence in the game.</p>
 <p>The plots of the degree distributions are reported below.</p>
 <table>
 <thead>
@@ -109,15 +125,46 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/in-degree.jpeg" alt="In-Degree Distribution"></td>
-<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/out-degree.jpeg" alt="Out-Degree Distribution"></td>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/in-degree.png" alt="In-Degree Distribution"></td>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/out-degree.png" alt="Out-Degree Distribution"></td>
 </tr>
 </tbody>
 </table>
-<p>In-Degree distribution shows that only a few characters have a degree higher than 25, while the great majority of them are between 1-10.</p>
+<p>In-Degree distribution shows that only a few characters have a degree higher than 25, while the great majority of them are between 0-10.</p>
 <p>Out-Degree distribution shows a similar behaviour with the majority of the nodes below a degree of 10.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p>Graphically, the in-degree distribution appears to follow a power law distribution, indicating a scale-free network (real network). The out-degree distribution seems to follow a power law distribution, but it is less skewed to the right, and is more difficult to interpret.</p>
+<p>We use the powerlaw function below to fit a power distribution and get the gamma values for further analysis.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/powerlaw1.png" alt="In-Degree Powerlaw"></td>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/powerlaw2.png" alt="Out-Degree Powerlaw"></td>
+</tr>
+</tbody>
+</table>
+<p>For the in-degree distribution, the exponent value (γ=2.33\gamma = 2.33γ=2.33) indicates that the network is in the scale-free regime (ultra-small world). As for the out-degree distribution, the exponent is almost equal to the critical value of 3 (γ=3.01 \gamma = 3.01γ=3.01.). While this makes the out-degree distribution more random-like, it is still not the same as a random network, for the value indicate the presence of a double logarithmic correction lnlnNlnlnNlnlnN which shrinks the distances of this network relative to a random network.</p>
+<p>We will compare our network below to a random one of the same probability for further confirmation.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/random.png" alt="Random Network"></td>
+<td><img src="https://Rasim-Deniz.github.io/final-fantasy-14/images/degree-dist.png" alt="Degree Distribution of Wiki"></td>
+</tr>
+</tbody>
+</table>
+<p>As seen above, the network&rsquo;s degree distribution significantly deviates from the expected random network. Our graphical, power-law and random network comparison are thus in agreement.</p>
 </section>
 
     <footer class="post-footer">
