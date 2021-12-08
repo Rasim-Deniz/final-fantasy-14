@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - 2021</copyright>
-    <lastBuildDate>Fri, 01 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://Rasim-Deniz.github.io/final-fantasy-14/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://Rasim-Deniz.github.io/final-fantasy-14/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overview</title>
+      <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/overview/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/overview/</guid>
+      <description> Abstract Dataset  Data Preprocessing Data Statistics   Network  Network Analysis   Text Analysis  Word Clouds   Finding Communities  Common words in the communities   Sentiment Analysis  Sentiment Analysis 1 Sentiment Analysis 2 Sentiment Analysis 3   Conclusion  </description>
+    </item>
+    
     <item>
       <title>1 - Abstract</title>
       <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/abstract/</link>
@@ -67,6 +76,15 @@ In the following plot the network is represented with a different color for ever
       <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/sentiment/</guid>
       <description>We now proceed performing a sentiment analysis of the communities, after we gather the adequate text information related to the story of the characters.
 We are going to perform different analyses. Firstly, we are going to use the LabMT dataset, to calculate the sentiment of each token, created from the textual description of the characters obtained from the wikipages, after proper tokenization and lemmatization. Subsequently, we are going to repeat the same process, this time using the text obtained from written dialogues extracted from the game.</description>
+    </item>
+    
+    <item>
+      <title>7 - Conclusion</title>
+      <link>https://Rasim-Deniz.github.io/final-fantasy-14/post/conclusion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/conclusion/</guid>
+      <description>We analyzed Final Fantasy XIV&amp;rsquo;s character descriptions and dialogue in this project. After data extraction and preprocessing using the Final Fantasy Fandom Wiki&amp;rsquo;s API and regular expressions, a directed network was built and found to be behaving as a sparse, scaled-free network. The most linked characters met our expectations based on knowledge of the game, as they are central characters with a significant influence on the plot and the outcomes of the game.</description>
     </item>
     
   </channel>
