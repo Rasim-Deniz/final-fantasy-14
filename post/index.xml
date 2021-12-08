@@ -55,7 +55,7 @@ The frequency distribution of the 75 most common tokens is reported below. The f
       
       <guid>https://Rasim-Deniz.github.io/final-fantasy-14/post/community/</guid>
       <description>As we are interested in analyzing the relations amongst the characters, we want to try to detect communities and study their characteristics. In order to perform this analysis, we are going to apply the Louvain Algorithm for community detection to the undirected network created previously.
-The algorithm detects 5 small communities that have less than 10 characters, and 9 bigger communities that have between 20 and 50 characters.
+The algorithm detects 6 small communities that have less than 10 characters, and 8 bigger communities that have between 20 and 50 characters.
 In the following plot the network is represented with a different color for every community.</description>
     </item>
     
